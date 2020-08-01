@@ -3,7 +3,7 @@
 > In this application I created a platform where users could share stock price and exchange real time information in Stock Exchange Market. User can follow to other user and he/she could write real time message to the followed user in my platform 
 
 
-## Live view  - - [Stock-Twitter](https://github.com/Bekhzod96/stock-tweet.git) - - 
+## Live view  - - [Stock-Twitter]() - - 
 
 ### Prerequisites
 
@@ -28,7 +28,7 @@ Postgres: >=9.5
 
 In order to start with the project:
 
-1. You need to have Rails environment installed. [Click here for instructions](https://github.com/Bekhzod96/stock-tweet.git)
+1. You need to have Rails environment installed. [Click here for instructions](https://github.com/Bekhzod96/stock-tweeter.git)
 2. Clone [this repository :stock-tweeter ](https://github.com/Bekhzod96/stock-tweeter.git)
 3. Check your Ruby and Rails version should be corresponding to project version, if not run these command to
     - rbenv install 5.2.3
