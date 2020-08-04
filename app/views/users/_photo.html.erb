@@ -5,9 +5,9 @@
 </div>
 <div class="modal-body followers-modal" >
   <% if user.photo.attached? %>
-    <%= image_tag user.photo, class: "w-100", alt:"Image not found", onerror: "this.onerror=null;this.src='/images/default-photo.jpg';" %>
+    <%= image_tag user.photo, class: "w-100", alt:"Image not found", onerror: "this.onerror=null;this.src='/images/pic.png';" %>
   <% else %>
-    <%= image_tag("default-photo.jpg", class: "w-100") %>
+    <%= image_tag("pic.png", class: "w-100") %>
   <% end %>
   <% if user == current_user %>
     <h6 class="card-title text-center mt-3">Update Photo</h6>  

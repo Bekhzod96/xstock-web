@@ -3,15 +3,15 @@
   <div class="col-12 col-md-9 pr-0">
     <div class="cover-image">
       <% if current_user.cover_image.attached? %>
-        <%= image_tag current_user.cover_image, alt:"Image not found", onerror: "this.onerror=null;this.src='/images/default-cover.jpg';" %>
+        <%= image_tag current_user.cover_image, alt:"Image not found", onerror: "this.onerror=null;this.src='/images/dpic.png';" %>
       <% else %>
-        <%= image_tag "default-cover.jpg" %>
+        <%= image_tag "pic.png" %>
       <% end %>
     </div>
     <%= render 'home/tab' %>
     <%= render  "layouts/flash" %>
   
-    <div class="card m-4" style="max-width: 100%;">
+    <div class="card m-4" style="max-width: 60%;">
       <div class="card-body">
         <h5 class="card-title text-center">Update Profile</h5>
         
@@ -65,9 +65,9 @@
           <%= link_to "<i class='fas fa-user-edit'></i>".html_safe, edit_user_registration_path,  {class: "btn btn-outline-dark user-options mr-2 p-2 opacity-half", id: 'edit-options', data: { toggle: "tooltip", placement: "bottom", title: "Edit Profile."}}  %>
         <% end %>
         <% if current_user.photo.attached? %>
-          <%= image_tag current_user.photo, height: 80, width: 80, class: "user-options", alt:"Image not found", onerror: "this.onerror=null;this.src='/images/default-photo.jpg';" %>
+          <%= image_tag current_user.photo, height: 80, width: 80, class: "user-options", alt:"Image not found", onerror: "this.onerror=null;this.src='/images/pic.png';" %>
         <% else %>
-          <%= image_tag "default-photo.jpg", height: 80, width: 80, class: "user-options" %>
+          <%= image_tag "pic.png", height: 80, width: 80, class: "user-options" %>
         <% end %>
         <button class="opacity-half btn btn-outline-dark user-options ml-2 p-2"><i class="fas fa-list"></i></button>
       </div>

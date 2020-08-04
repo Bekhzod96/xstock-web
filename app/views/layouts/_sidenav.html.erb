@@ -2,9 +2,9 @@
   <div class="sticky-top position-sticky">
     <div class="d-flex justify-content-center align-items-center p-3">
       <% if current_user.photo.attached?  %>
-      <%= link_to(image_tag(current_user.photo, class: "profile-picture", alt:"Image not found", onerror: "this.onerror=null;this.src='/images/default-photo.jpg';"), me_path) %>
+      <%= link_to(image_tag(current_user.photo, class: "profile-picture", alt:"Image not found", onerror: "this.onerror=null;this.src='/images/pic.png';"), me_path) %>
       <% else %>
-        <%= link_to(image_tag("default-photo.jpg", class: "profile-picture"), me_path) %>
+        <%= link_to(image_tag("pic.png", class: "profile-picture"), me_path) %>
       <% end %>
       <p class="mb-0 ml-3 opacity-half" id="current_user" data-id="<%= current_user.id %>"><%= link_to current_user.fullname, me_path, class: "white-color opacity-half" %></p>
     </div>

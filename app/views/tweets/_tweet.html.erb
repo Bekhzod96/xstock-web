@@ -1,8 +1,8 @@
 <div class="d-flex my-4 mx-2" id="tweet-<%= tweet.id %>">
   <% if tweet.author.photo.attached? %>
-    <%= link_to(image_tag(tweet.author.photo, height: 80, width: 80, alt:"Image not found", onerror: "this.onerror=null;this.src='/images/default-photo.jpg';"), user_path(tweet.author)) %>
+    <%= link_to(image_tag(tweet.author.photo, height: 80, width: 80, alt:"Image not found", onerror: "this.onerror=null;this.src='/images/pic.png;"), user_path(tweet.author)) %>
   <% else %>
-    <%= link_to(image_tag("default-photo.jpg", height: 80, width: 80), user_path(tweet.author)) %>
+    <%= link_to(image_tag("pic.png", height: 80, width: 80), user_path(tweet.author)) %>
   <% end %>
   <div class="ml-2 w-100">
     <div class="d-flex justify-content-between">
