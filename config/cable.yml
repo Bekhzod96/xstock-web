@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: <%= ENV.fetch("REDIS_URL") { redis://h:p1827da5b7720173723eb63fbd0dee7ea5d57cd716e9d4b94b5bc118bc3d4bf85@ec2-3-224-53-9.compute-1.amazonaws.com:22649  " } %>
+  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
   channel_prefix: stock_twitter_production
