@@ -3,7 +3,7 @@ addEventListener("direct-upload:initialize", function(event){
   var detail = event.detail;
   var id = detail.id;
   var file = detail.file;
-  target.insertAdjacentHTML("before:begin", `
+  target.insertAdjacentHTML("beforebegin", `
     <div id="direct-upload-${id}" class="direct-upload direct-upload--pending">
       <div id="direct-upload-progress-${id}" class="direct-upload__progress" style="width: 0%"></div>
       <span class="direct-upload__filename"></span>
