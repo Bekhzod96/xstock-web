@@ -5,9 +5,9 @@ class TweetsController < ApplicationController
     @tweet = Tweet.new(tweet_params)
     respond_to do |format|
       if @tweet.save
-        format.html { redirect_to root_path, notice: 'Tweet was successfully created.' }
+        format.html { redirect_to root_path, flash: {success: 'Tweet created successfully'} }
       else
-        format.html { redirect_to root_path, alert: @tweet.errors.full_messages.join('. ') }
+        format.html { redirect_to root_path, flash: {error: @tweet.errors.full_messages.join('. ')} }
       end
     end
   end
@@ -21,7 +21,7 @@ class TweetsController < ApplicationController
   def update
     respond_to do |format|
       if @tweet.update(tweet_params)
-        format.html { redirect_to root_path, notice: 'Tweet was successfully updated.' }
+        format.html { redirect_to root_path, flash: {success: 'Tweet updated successfully'} }
       else
         format.html { redirect_to root_path }
       end
@@ -32,7 +32,7 @@ class TweetsController < ApplicationController
     @tweet.destroy
 
     respond_to do |format|
-      format.html { redirect_to tweets_url, notice: 'Tweet was successfully destroyed.' }
+      format.html { redirect_to root_url, flash: {success: 'Tweet successfully destroyed'} }
       format.js { render :destroy }
     end
   end

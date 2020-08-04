@@ -4,7 +4,7 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require bootstrap
-
+//= require toastr
 //= require turbolinks
 //= require_tree .
 
@@ -52,6 +52,22 @@ $(document).on('turbolinks:load', function(ev){
       $("#info-tweet").text(`${(250 - $(this).val().length)}/250`);
     });
   }
+
+  $(function() {
+    toastr.options = {
+        "closeButton": false,
+        "debug": false,
+        "positionClass": "toast-top-right",
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    }
 
   scroll_bottom();
   update_unread();
