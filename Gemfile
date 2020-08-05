@@ -43,6 +43,7 @@ gem 'popper_js', '~> 1.16'
 gem 'rubocop', '~> 0.82.0'
 gem 'sprockets-rails', '~> 3.2', '>= 3.2.1'
 gem 'toastr-rails'
+gem 'iex-ruby-client'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

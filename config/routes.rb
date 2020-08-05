@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :followings, only: [:create, :destroy]
   resources :comments, only: [:create, :destroy]
   get 'reset_unread', to: 'user_rooms#reset_unread'
+  get 'search_stock', to: 'stocks#search'
 
   mount ActionCable.server, at: 'cable'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
