@@ -2,7 +2,8 @@ class StocksController < ApplicationController
   def search
     if params[:stock].present?
 			@stock = new_lookup(params[:stock])
-			if @stock
+      if @stock
+        @value = @stock
         respond_to do |format|
           format.js { render partial: 'stocks/stock' }
         end
