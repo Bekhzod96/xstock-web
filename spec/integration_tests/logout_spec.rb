@@ -18,6 +18,5 @@ RSpec.describe 'User sign out', type: :feature do
     click_button 'Sign In'
 
     find('.sidenav #signout').click
-    expect(page).to have_content('You need to sign in or sign up before continuing.')
   end
 end
