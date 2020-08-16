@@ -1,5 +1,5 @@
 module ApplicationHelper
-	def following?(user)
+  def following?(user)
     current_user.followeds.include?(user)
   end
 

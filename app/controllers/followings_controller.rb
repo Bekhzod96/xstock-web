@@ -1,5 +1,4 @@
 class FollowingsController < ApplicationController
-
   def create
     following = Following.new(following_params)
     @user = following.followed

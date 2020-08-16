@@ -1,5 +1,5 @@
 class RoomsController < ApplicationController
-	before_action :set_room, only: [:show]
+  before_action :set_room, only: [:show]
   before_action :secure_room, only: [:show]
 
   def index

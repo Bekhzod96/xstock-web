@@ -13,10 +13,10 @@ class CommentsController < ApplicationController
     @tweet = @comment.tweet
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to root_path, flash: {success: 'comment was successfully created'}}
+        format.html { redirect_to root_path, flash: { success: 'comment was successfully created' } }
         format.js
       else
-        format.html { redirect_to root_path, flash: {error: @comment.errors.full_messages.join('. ')} }
+        format.html { redirect_to root_path, flash: { error: @comment.errors.full_messages.join('. ') } }
       end
     end
   end
