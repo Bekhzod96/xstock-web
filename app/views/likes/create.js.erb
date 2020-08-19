@@ -1,0 +1,13 @@
+if(document.querySelector('#tweet-<%= @tweet.id %> #like-options')){
+  $('#tweet-<%= @tweet.id %> #like-options').tooltip('hide');
+  document.querySelector('#tweet-<%= @tweet.id %> #like-options')
+    .parentElement.removeChild(document.querySelector('#tweet-<%= @tweet.id %> #like-options'));
+}
+
+document.querySelector('#tweet-<%= @tweet.id %> .like-options')
+  .insertAdjacentHTML('afterbegin',"<%= j render 'likes/unlike_button', tweet: @tweet %>");
+$('#tweet-<%= @tweet.id %> #unlike-options').tooltip('show');
+
+if(document.querySelector('#tweet-<%= @tweet.id %> #like-number')){
+  document.querySelector('#tweet-<%= @tweet.id %> #like-number').innerText = parseInt(document.querySelector('#tweet-<%= @tweet.id %> #like-number').innerText) + 1
+}

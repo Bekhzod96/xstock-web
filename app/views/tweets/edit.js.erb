@@ -1,0 +1,6 @@
+$("#modal-window").find(".modal-content").html("<%= j (render 'tweets/edit_tweet') %>");
+$("#modal-window").modal();
+
+$("#tweet_edit_text").keyup(function(){
+  $("#info-edit-tweet").text(`${(250 - $(this).val().length)}/250`);
+});

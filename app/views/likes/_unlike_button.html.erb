@@ -1,0 +1,1 @@
+<%= link_to "<i class='fas fa-heart'></i>".html_safe, tweet_like_path(tweet,1),  {:remote => true, method: :delete, class: 'opacity-half', id: 'unlike-options', data: { toggle: "tooltip", placement: "bottom", title: "#{pluralize(tweet.likes.size, "like")}, you like this post."}}  %>

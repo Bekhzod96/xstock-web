@@ -1,0 +1,35 @@
+
+<div class="d-flex my-4 mx-2" id="tweet-<%= tweet.id %>">
+  <% if tweet.author.photo.attached? %>
+    <%= link_to(image_tag(tweet.author.photo, height: 80, width: 80, alt:"Image not found", onerror: "this.onerror=null;this.src='/images/pic.png;"), user_path(tweet.author)) %>
+  <% else %>
+    <%= link_to(image_tag("pic.png", height: 80, width: 80), user_path(tweet.author)) %>
+  <% end %>
+  <div class="ml-2 w-100">
+    <div class="d-flex justify-content-between">
+      <p class='mb-0'><%= link_to tweet.author.fullname, user_path(tweet.author), class: "black-color" %></p>
+      <small class="opacity-half"><%=  time_ago_in_words(tweet.updated_at) %></small>
+    </div>
+    <small class="mb-0"><%= tweet.text %></small>
+    <div class="tweet-options d-flex justify-content-around align-items-start  mt-1">
+      <div class="d-flex flex-column align-items-center like-options">
+        <% if like?(tweet, current_user) %>
+          <%= render 'likes/unlike_button', tweet: tweet %>
+        <% else %>
+          <%= render 'likes/like_button', tweet: tweet %>
+        <% end %>
+        <small id="like-number"><%= tweet.likes.size %></small>
+      </div>
+      <div class="d-flex flex-column align-items-center">
+        <%= link_to "<i class='far fa-comment'></i>".html_safe, tweet_comments_path(tweet), {:remote => true, class: 'opacity-half comment-icon', data: { toggle: "tooltip", placement: "bottom", title: "#{pluralize(tweet.comments.size, "comment")}."}} %>
+        <small id="comment-number"><%= tweet.comments.size %></small>
+      </div>
+      <% if tweet.author == current_user %>
+        <span data-toggle="tooltip" data-placement="bottom" data-title="Edit">
+          <%= link_to "<i class='far fa-edit'></i>".html_safe, edit_tweet_path(tweet),  {:remote => true, class: 'opacity-half', data: {target: "#modal-window", toggle: "modal"}}  %>
+        </span>
+        <%= link_to "<i class='far fa-trash-alt'></i>".html_safe, tweet_path(tweet), {:remote => true, class: 'opacity-half', method: :delete, data: {confirm: 'Are you sure about deleting the tweet?', toggle: "tooltip", placement: "bottom", title: "Delete"}} %>
+      <% end %>
+    </div>
+  </div>
+</div>
